@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		html,body{
+			background: #eee;
+
+		}
+	</style>
+</head>
+<body>
+	<div style="width:100%;height:180px;margin-bottom:20px;background:#fff">
+			<div>
+				<div id="pressure-contain" style="width:60%; height:200px;float:right"></div>			
+			</div>
+
+	</div>
+
+	<div style="width:100%;height:180px;background:#fff">
+			<div>
+				<div id="heart-contain" style="width:60%; height:200px;float:right"></div>			
+			</div>
+
+	</div>
+</body>
+<script src="js/ruler.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+window.onload=function(){
+	//调用此插件须输入两个参数，第一个为要注入标签的id名，第二个为他的参数对象，详情如下
+	var pressureRuler=new Ruler("pressure-contain",{
+		maxNum:"240",        	//最大数值
+		minNum:"0",			//最小数值
+		initNum:"120",     		//初始数值
+		decimalWei:"0",			//保留几位有效小数；默认为零
+		cellNum:"10",			//两个大刻度的数值区间
+		name:"血压",				//名称
+		unit:"mmHg"				//单位
+	});
+
+	//该插件的属性
+	console.log(pressureRuler.nowData);      //当前数值
+	//说明：该插件还需要什么属性和方法请与我沟通；
+
+	var heartRuler=new Ruler("heart-contain",{
+		maxNum:"400",        	//最大数值
+		minNum:"30",			//最小数值
+		initNum:"35",     		//初始数值
+		decimalWei:"0",			//保留几位有效小数；默认为零
+		cellNum:"10",			//两个大刻度的数值区间
+		name:"心率",				//名称
+		unit:"bpm"				//单位
+	});
+
+}
+</script>
+</html>
